@@ -7,14 +7,35 @@ body {
   position: absolute;
   width: 100%;
   height: 100%; }
+  .App .drawer {
+    position: fixed;
+    top: 0;
+    left: 0;
+    padding: 0;
+    margin: 0;
+    overflow-y: scroll;
+    height: 100%;
+    width: 100%;
+    background-color: white;
+    z-index: 2; }
+    .App .drawer .am-icon {
+      color: #000000; }
+    .App .drawer .am-navbar {
+      position: -webkit-sticky;
+      position: sticky;
+      top: 0;
+      width: 100%;
+      z-index: 3; }
+    .App .drawer .content {
+      top: 0px;
+      width: 100%; }
   .App img {
     width: 100%; }
   .App .main {
     position: relative;
     padding: 0;
-    margin: 0;
     width: 100%;
-    height: 100%; }
+    margin: 0; }
     .App .main .contains {
       position: relative;
       left: 10%;
@@ -22,7 +43,10 @@ body {
       .App .main .contains .login {
         margin: 0 auto; }
         .App .main .contains .login .phone {
+          width: 100%;
           outline: none;
+          padding: 0px;
+          margin: 0px;
           display: flex;
           align-items: center;
           height: 40px;
@@ -32,7 +56,10 @@ body {
           .App .main .contains .login .phone input {
             border: 0px solid transparent;
             outline: none;
+            width: 100%;
             font-size: 14px; }
+          .App .main .contains .login .phone input::-webkit-input-placeholder {
+            opacity: 0.5; }
         .App .main .contains .login .code {
           position: relative;
           width: 100%;
@@ -40,7 +67,10 @@ body {
           justify-content: space-between;
           margin-top: 20px; }
           .App .main .contains .login .code .code2 {
+            width: 55%;
             outline: none;
+            padding: 0px;
+            margin: 0px;
             display: flex;
             align-items: center;
             height: 40px;
@@ -50,33 +80,62 @@ body {
             .App .main .contains .login .code .code2 input {
               border: 0px solid transparent;
               outline: none;
+              width: 100%;
               font-size: 14px; }
+            .App .main .contains .login .code .code2 input::-webkit-input-placeholder {
+              opacity: 0.5; }
           .App .main .contains .login .code a {
             outline: none;
             display: flex;
-            width: 100%;
-            margin-left: 15px;
             align-items: center;
             justify-content: center;
             height: 40px;
+            width: 45%;
+            margin-left: 15px;
             color: white;
             border: 0px solid transparent;
             border-radius: 50px;
-            background-color: red; }
-            .App .main .contains .login .code a span {
-              margin: 0 auto; }
+            background-color: #e3311a; }
       .App .main .contains .read {
         position: relative;
-        margin-top: 40px; }
-        .App .main .contains .read p {
-          color: white;
-          font-size: 12px; }
-          .App .main .contains .read p span {
-            color: red; }
+        margin-top: 20px;
+        margin-left: 30px;
+        color: white;
+        font-size: 10px; }
+        .App .main .contains .read span {
+          position: relative; }
+        .App .main .contains .read .inputCheck {
+          position: absolute;
+          visibility: hidden; }
+        .App .main .contains .read label {
+          display: inline-block;
+          margin-right: 15px;
+          border-radius: 3px;
+          width: 10px;
+          height: 10px;
+          border: 1px solid #ffffff; }
+        .App .main .contains .read .inputCheck:checked + label:after {
+          content: "";
+          position: absolute;
+          top: 2px;
+          left: 2px;
+          bottom: 12px;
+          width: 6px;
+          height: 3px;
+          border: 1px solid #ffffff;
+          border-top-color: transparent;
+          border-right-color: transparent;
+          -ms-transform: rotate(-60deg);
+          -moz-transform: rotate(-60deg);
+          -webkit-transform: rotate(-60deg);
+          transform: rotate(-45deg); }
+        .App .main .contains .read a {
+          color: #e3311a; }
       .App .main .contains .registered {
         position: relative;
         display: flex;
         align-items: center;
+        margin-top: 10px;
         width: 100%; }
         .App .main .contains .registered a {
           flex: 1;
@@ -88,7 +147,7 @@ body {
           color: white;
           border: 0px solid transparent;
           border-radius: 50px;
-          background-color: red; }
+          background-color: #e3311a; }
       .App .main .contains .download {
         position: relative;
         margin-top: 20px;

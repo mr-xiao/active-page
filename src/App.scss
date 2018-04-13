@@ -1,5 +1,7 @@
 @mixin in{
   outline:none;
+  padding: 0px;
+  margin: 0px;
   display: flex;
   align-items: center;
   height: 40px;
@@ -9,7 +11,11 @@
   input{
     border: 0px solid transparent;
     outline:none;
+    width: 100%;
     font-size: 14px;
+    }
+  input::-webkit-input-placeholder{
+    opacity: 0.5;
   }
 }
 body{
@@ -18,18 +24,44 @@ body{
   background-color: #e8a947;
 }
 .App{
+  .drawer{
+    position: fixed;
+    top: 0;
+    left: 0;
+    padding: 0;
+    margin: 0;
+    overflow-y: scroll;
+    height: 100%;
+    width: 100%;
+    background-color: white;
+    z-index: 2;
+    .am-icon{
+      color: #000000;
+    }
+    .am-navbar{
+      position: -webkit-sticky;
+      position: sticky;
+      top: 0;
+      width: 100%;
+      z-index: 3;
+    }
+    .content{
+      top: 0px;
+      width: 100%;
+    }
+  }
     position: absolute;
     width: 100%;
     height: 100%;
     img{
       width: 100%;
     }
+
   .main{
     position: relative;
     padding: 0;
-    margin: 0;
     width: 100%;
-    height: 100%;
+    margin: 0;
     .contains{
       position: relative;
       left: 10%;
@@ -37,6 +69,7 @@ body{
       .login{
         margin: 0 auto;
         .phone{
+          width: 100%;
           @include in;
         }
         .code{
@@ -46,41 +79,69 @@ body{
           justify-content: space-between;
           margin-top: 20px;
           .code2{
+            width: 55%;
             @include in;
           }
           a{
             outline:none;
             display: flex;
-            width: 100%;
-            margin-left: 15px;
             align-items: center;
             justify-content: center;
             height: 40px;
+            width: 45%;
+            margin-left: 15px;
             color: white;
             border: 0px solid transparent;
             border-radius: 50px;
-            background-color: red;
-            span{
-              margin: 0 auto;
-            }
+            background-color: #e3311a;
           }
         }
       }
       .read{
         position: relative;
-        margin-top: 40px;
-        p{
-          color: white;
-          font-size: 12px;
-          span{
-            color: red;
-          }
+        margin-top: 20px;
+        margin-left: 30px;
+        color: white;
+        font-size: 10px;
+        span{
+          position: relative;
         }
+        .inputCheck{
+          position: absolute;
+          visibility: hidden;
+        }
+        label{
+          display: inline-block;
+          margin-right: 15px;
+          border-radius: 3px;
+          width: 10px;
+          height: 10px;
+          border: 1px solid #ffffff;
+        }
+        .inputCheck:checked+label:after {
+          content: "";
+          position: absolute;
+          top: 2px;
+          left: 2px;
+          bottom: 12px;
+          width: 6px;
+          height: 3px;
+          border: 1px solid #ffffff;
+          border-top-color: transparent;
+          border-right-color: transparent;
+          -ms-transform: rotate(-60deg);
+          -moz-transform: rotate(-60deg);
+          -webkit-transform: rotate(-60deg);
+          transform: rotate(-45deg);}
+          a {
+            color: #e3311a;
+          }
       }
       .registered{
         position: relative;
         display: flex;
         align-items: center;
+        margin-top: 10px;
         width: 100%;
         a{
           flex: 1;
@@ -92,7 +153,7 @@ body{
           color: white;
           border: 0px solid transparent;
           border-radius: 50px;
-          background-color: red;
+          background-color: #e3311a;
         }
       }
       .download{
